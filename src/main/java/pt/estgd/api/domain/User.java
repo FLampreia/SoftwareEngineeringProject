@@ -2,6 +2,7 @@ package pt.estgd.api.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.antlr.v4.runtime.misc.NotNull;
 
 import java.util.Set;
 
@@ -16,12 +17,17 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(nullable = false)
     private String name;
+
+    @Column(unique = true, nullable = false)
     private String email;
+
+    @Column(nullable = false)
     private String password;
 
     @ManyToOne
-    @JoinColumn(name = "user_role")
+    @JoinColumn(name = "user_role", nullable = false)
     private Role role;
 
     @ManyToMany
