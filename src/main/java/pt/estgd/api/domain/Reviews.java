@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Reviews {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private int value;
 

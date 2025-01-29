@@ -15,7 +15,7 @@ public class Classes {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String name;
     private LocalDateTime dateTime;
