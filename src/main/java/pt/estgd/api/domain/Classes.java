@@ -17,7 +17,6 @@ public class Classes {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
     private LocalDateTime dateTime;
     private String Summary;
 
