@@ -1,15 +1,11 @@
-INSERT INTO role (name)
-VALUES ('Docente'),
-       ('Aluno');
+-- INSERT INTO user (email, name, password, user_role)
+-- values
+--    ('joao@gmail.com','João','123',2),
+--    ('maria@gmail.com','Maria','123',2),
+--    ('rui@gmail.com','Rui','123',2),
 
-INSERT INTO user (email, name, password, user_role)
-values
-    ('joao@gmail.com','João','123',2),
-    ('maria@gmail.com','Maria','123',2),
-    ('rui@gmail.com','Rui','123',2),
-
-    ('antonio@gmail.com','António','123',1),
-    ('patricia@gmail.com','Patrícia','123',1);
+--    ('antonio@gmail.com','António','123',1),
+--    ('patricia@gmail.com','Patrícia','123',1);
 
 insert into participation (name, description)
 values
