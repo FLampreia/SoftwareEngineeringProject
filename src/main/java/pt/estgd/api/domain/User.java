@@ -15,10 +15,6 @@ import java.util.Set;
 @AllArgsConstructor
 public class User implements UserDetails {
 
-    public User(){
-
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -51,7 +47,13 @@ public class User implements UserDetails {
         this.role = role;
     }
 
+    public User(){
 
+    }
+
+    public String getEmail() {
+        return email;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
