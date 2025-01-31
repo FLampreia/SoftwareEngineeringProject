@@ -1,5 +1,6 @@
 package pt.estgd.api.controllers;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -15,6 +16,7 @@ import pt.estgd.api.dto.AuthenticationDTO;
 import pt.estgd.api.dto.RegisterDTO;
 import pt.estgd.api.repositories.UserRepository;
 
+@Slf4j
 @RestController
 @RequestMapping("auth")
 public class AuthenticationController {
@@ -27,7 +29,9 @@ public class AuthenticationController {
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody AuthenticationDTO data){
+
         var usernamePassword = new UsernamePasswordAuthenticationToken(data.email(), data.password());
+
         var authentication = this.authenticationManager.authenticate(usernamePassword);
 
         return ResponseEntity.ok().build();
@@ -35,12 +39,12 @@ public class AuthenticationController {
 
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody RegisterDTO data){
-        if(this.userRepository.findByEmail(data.email()) != null) return ResponseEntity.badRequest().build();
 
         String encryptedPassword = new BCryptPasswordEncoder().encode(data.password());
         User newUser = new User(data.name(), data.email(), encryptedPassword, data.role());
 
         this.userRepository.save(newUser);
+
 
         return ResponseEntity.ok().build();
     }

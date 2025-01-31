@@ -10,11 +10,14 @@ import java.util.Collections;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class User implements UserDetails {
+
+    public User(){
+
+    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -29,12 +32,13 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String password;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private RoleType role;
 
     @ManyToMany
     @JoinTable(
-            name = "user_curricularUnits",
+            name = "user_curricular_Units",
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "unit_id")
     )
@@ -46,6 +50,7 @@ public class User implements UserDetails {
         this.password = password;
         this.role = role;
     }
+
 
 
     @Override
@@ -82,5 +87,10 @@ public class User implements UserDetails {
     @Override
     public boolean isEnabled() {
         return true;
+    }
+
+    @Override
+    public String toString() {
+        return "User{id=" + id + ", name='" + name + "', email='" + email + "', role='" + role + "'}";
     }
 }

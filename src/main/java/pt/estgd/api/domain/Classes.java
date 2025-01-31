@@ -21,7 +21,7 @@ public class Classes {
     private String Summary;
 
     @ManyToOne
-    @JoinColumn(name = "curricularUnit_id")
+    @JoinColumn(name = "curricular_Unit_id")
     private CurricularUnit curricularUnit;
 
     @OneToMany(mappedBy = "classes")

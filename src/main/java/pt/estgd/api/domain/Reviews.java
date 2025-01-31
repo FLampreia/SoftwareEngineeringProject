@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "participationReviews")
+@Table(name = "participation_Reviews")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,7 +23,7 @@ public class Reviews {
 
 
     @ManyToOne
-    @JoinColumn(name = "participationType_id")
+    @JoinColumn(name = "participation_type_id")
     private ParticipationType participationType;
 
 
