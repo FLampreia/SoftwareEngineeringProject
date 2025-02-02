@@ -2,7 +2,7 @@ package pt.estgd.api.domain;
 
 public enum RoleType {
     ADMIN("Docente"),
-    USER("Student");
+    USER("Aluno");
 
     private String role;
 

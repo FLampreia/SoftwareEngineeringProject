@@ -13,13 +13,15 @@ public class Reviews {
 
     private int value;
 
+    private String comment;
+
     @ManyToOne
     @JoinColumn(name = "attendance_id")
     private Attendance attendance;
 
 
-    @ManyToOne
-    @JoinColumn(name = "participation_type_id")
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private ParticipationType participationType;
 
 
