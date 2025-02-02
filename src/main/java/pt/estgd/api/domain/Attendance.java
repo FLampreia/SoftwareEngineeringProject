@@ -2,19 +2,14 @@ package pt.estgd.api.domain;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
+
 
 import java.io.Serial;
 import java.util.Set;
 
 @Entity
 @Table(name = "attendance")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class Attendance {
 
     @Id

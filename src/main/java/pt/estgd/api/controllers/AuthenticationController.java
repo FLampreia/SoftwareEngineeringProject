@@ -1,6 +1,6 @@
 package pt.estgd.api.controllers;
 
-import lombok.extern.slf4j.Slf4j;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,7 +19,7 @@ import pt.estgd.api.dto.RegisterDTO;
 import pt.estgd.api.repositories.UserRepository;
 import pt.estgd.api.services.JWTTokenService;
 
-@Slf4j
+
 @RestController
 @RequestMapping("auth")
 public class AuthenticationController {

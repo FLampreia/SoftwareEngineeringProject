@@ -1,16 +1,14 @@
 package pt.estgd.api.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
+
 
 import java.time.LocalDateTime;
 import java.util.Set;
 
 @Entity
 @Table(name = "classes")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class Classes {
 
     @Id

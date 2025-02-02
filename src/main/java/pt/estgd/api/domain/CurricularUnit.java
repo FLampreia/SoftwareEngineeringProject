@@ -1,15 +1,13 @@
 package pt.estgd.api.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
+
 
 import java.util.Set;
 
 @Entity
 @Table(name = "curricular_Unit")
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class CurricularUnit {
 
     @Id

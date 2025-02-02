@@ -1,7 +1,7 @@
 package pt.estgd.api.domain;
 
 import jakarta.persistence.*;
-import lombok.*;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,8 +11,6 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users")
-@Data
-@AllArgsConstructor
 public class User implements UserDetails {
 
     @Id
